@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin GoFood</title>
+</head>
+<body class="body-body">
+        <form class="form-log" action="" method="post">
+            <a class="to-index" href="index.html"><img src="img/FoodGo.png" alt="logo"></a><br>
+            <label class="login-lable" for="login">Login:</label><br>
+            <input type="text" class="login"><br>
+        
+            <label class="login-lable" for="">Password:</label><br>
+            <input type="password" class="password"><br><br>
+        
+            <button class="submit-btn-log" type="submit" onclick="adminLog(event)">Log in</button>
+            <div class="invalid">Invalid password or login</div>
+        </form>
+    <section class="order-section">
+        <div class="invalid-2">Invalid couriers id</div>
+        <div class="valid-3">The order has been transferred to the Courier</div>
+    </section>
+
+    <script src="admin.js"></script>
+    <script src="animation.js"></script>
+    <script src="accept.js"></script>
+    <script src="noaccept.js"></script>
+</body>
+</html>

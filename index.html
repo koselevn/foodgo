@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>FoodGo</title>
+</head>
+<body>
+    <header class="header-header">
+        <nav class="header-nav">
+            <img class="header-img c" src="img/FoodGo.png" alt="FoodGo">
+            <nav class="header-nav-2 b">
+                <a href="index.html" class="header-a">Home</a>
+                <a href="" class="header-a">My Orders</a>
+                <a href="#menu" class="header-a">Menu</a>
+                <a href="#popup" class="header-a">Basket</a>
+            </nav>
+        </nav>
+        <div class="title-div">
+            <div>
+                <h1 class="title-title c">THIS IS MORE THAN JUST TASTY</h1>
+                <p class="title-p c">Welcome to our fast restaurant! Enjoy the taste in every bite - both taste and speed are important to us. Come
+                and enjoy
+                delicious food without wasting time!</p>  
+                
+                <a class="title-btn" href="#menu">Order food</a>
+                <a class="title-btn-2" href="#menu">Order food</a>
+            </div>
+            <img src="img/bigburger.png" alt="burger">
+        </div>
+    </header>
+    <main>
+        <!--Menu title-->
+        <section id="menu">
+            <div class="menu-title-div">
+                <h2 class="menu-menu-title a">Menu</h2>
+            </div>
+        </section>
+        <!--Menu-->
+        <section class="menu-section">
+            <div class="cards">
+            </div>
+            <p class="footer-p">Copyright © 2023 GoFood</p>
+        </section>
+        <a href="#popup"><img class="basket" src="img/basket.png" alt=""></a>
+        <p class="message-for-add-to-card">Product added to cart</p>
+        <p class="message-for-not-information">Please fill in all fields</p>
+        <p class="message-for-not-basket">First, select a product</p>
+    </main>
+    <footer></footer>
+    <div id="popup" class="popup">
+        <a href="#" class="bagron"></a>
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close">X</a>
+                <div class="popup_title">Basket</div>
+                <div class="popup_text">
+                    <div class="list-el"></div>
+                </div>
+                <div class="basket-and-div">
+                <div class="sum-div">
+                    <p class="summa">Summa: 00.00</p>
+                </div>
+                <div>
+                    <a class="confirm-btn" href="#order">Confirm</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="order" class="popup">
+        <a href="#" class="bagron"></a>
+        <div class="popup_body">
+            <div class="popup_content">
+                <a href="#" class="popup_close">X</a>
+                <div class="popup_title">Order</div>
+                <div class="popup_text">
+                    <form class="order-form-form" action="" method="post">
+                        <label class="order-lable" for="name">Name</label><br>
+                        <input placeholder="Name" type="text" class="name" id="name"><br>
+
+                        <label class="order-lable" for="address">Your address</label><br>
+                        <input placeholder="ul.Centralna 24A" type="text" class="address" id="address"><br>
+
+                        <label class="order-lable" for="name">Your phone number</label><br>
+                        <input placeholder="+48 57 77 777 " type="text" class="phone" id="phone"><br>
+
+                        <label class="order-lable" for="requests">Requests and instructions for ordering</label><br>
+                        <textarea placeholder="Requests for ordering" class="requests" name="requests" id="requests"></textarea>
+
+                        <label for="datetime" class="datetime">Select date and time</label><br>
+                        <input type="datetime-local" id="datetime" name="datetime" class="datetime-input"><br>
+
+                        <label class="order-lable" for="method">Payment method</label><br>
+                        <div>
+                            <input class="pay-input" type="radio" id="cash" name="payment_method">
+                            <label class="pay-lable" for="cash">Cash</label>
+
+                            <input class="pay-input" type="radio" id="bank_card" name="payment_method">
+                            <label class="pay-lable" for="bank_card">Bank card</label>
+                        </div>
+                        <button class="order-submit" type="submit" onclick="submitOrder(event)">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="select.js"></script>
+    <script src="app.js"></script>
+    <script src="basket.js"></script>
+    <script src="utils.js"></script>
+    <script src="order.js"></script>
+    <script src="animation.js"></script>
+</body>
+</html>
