@@ -39,6 +39,18 @@
         </section>
         <!--Menu-->
         <section class="menu-section">
+            <div class="filter-div">
+                <p class="filter-title">Filters:</p>
+                <div onclick="filter('all')" class="filter-item c">ALL</div>
+                <div onclick="filter('pizza')" class="filter-item a">Pizzas</div>
+                <div onclick="filter('burger')" class="filter-item c">Burgers</div>
+                <div onclick="filter('wrap')" class="filter-item a">Wraps</div>
+                <div onclick="filter('drink')" class="filter-item c">Drinks</div>
+                <div onclick="filter('Potatoes')" class="filter-item a">Potatoes</div>
+                <div onclick="filter('sause')" class="filter-item c">Sauses</div>
+
+                <div onclick="filterVeg()" class="filter-item-veg a">Vegetarian</div>
+            </div>
             <div class="cards">
             </div>
             <p class="footer-p">Copyright © 2023 GoFood</p>
@@ -112,5 +124,6 @@
     <script src="utils.js"></script>
     <script src="order.js"></script>
     <script src="animation.js"></script>
+    <script src="filters.js"></script>
 </body>
 </html>
