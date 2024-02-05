@@ -425,6 +425,52 @@ header{
     opacity: 0;
 }
 
+.message-for-not-time{
+    position: fixed;
+    bottom: 20px;
+    left: -20px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background-color: #ff0000;
+    border-radius: 5px;
+
+    padding: 10px 30px;
+
+    text-align: center;
+
+    z-index: 10000001;
+
+    opacity: 0;
+}
+
+.message-for-not-time-cor{
+    position: fixed;
+    bottom: 20px;
+    left: -20px;
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background-color: #ff0000;
+    border-radius: 5px;
+
+    padding: 10px 30px;
+
+    text-align: center;
+
+    z-index: 10000001;
+
+    opacity: 0;
+}
+
 .active-message{
     opacity: 1;
 }
@@ -582,6 +628,10 @@ header{
     border-radius: 10px;
 
     cursor: pointer;
+}
+
+.count-btn-block{
+    cursor: not-allowed;
 }
 
 .count-btn:hover{
@@ -795,9 +845,22 @@ header{
 
 .filter-div{
     margin-bottom: 30px;
-    display: flex;
+    /* display: flex; */
     padding-left: 80px;
     padding-top: 30px;
+    padding-bottom: 30px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    flex-direction: row;
+}
+
+.filter-div-2 {
+    margin-bottom: 30px;
+    display: flex;
+    padding-left: 80px;
     padding-bottom: 30px;
 }
 
@@ -817,6 +880,7 @@ header{
     transition: all 0.3s;
 
     border-radius: 20px;
+    border: 1px solid #00000076;
 
     cursor: pointer;
 }
@@ -837,6 +901,49 @@ header{
     transition: all 0.5s;
 
     border-radius: 20px;
+    border: 1px solid #00000076;
+
+    cursor: pointer;
+}
+
+.filter-item-p {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 15.015px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background: #62D0DF;
+    padding: 15px 30px;
+
+    margin-right: 20px;
+
+    transition: all 0.3s;
+
+    border-radius: 20px;
+    border: 1px solid #00000076;
+
+    cursor: pointer;
+}
+
+.filter-item-all {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 15.015px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background: #FF0004;
+    padding: 15px 30px;
+
+    margin-right: 20px;
+
+    transition: all 0.3s;
+
+    border-radius: 20px;
+    border: 1px solid #00000076;
 
     cursor: pointer;
 }
@@ -847,4 +954,12 @@ header{
 
 .filter-item:hover{
     background-color: #d99216;
+}
+
+.filter-item-p:hover{
+    background-color: #4ba7b4;
+}
+
+.filter-item-all:hover {
+    background-color: #ad0003;
 }

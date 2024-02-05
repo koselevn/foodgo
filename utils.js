@@ -38,3 +38,15 @@ function PAYMETHOD() {
         return null;
     }
 }
+
+window.addEventListener('scroll', function() {
+  var fixedDiv = document.getElementById('fixedDiv');
+  var content = document.querySelector('.section-menu');
+  
+  // Проверяем, прокручена ли страница достаточно, чтобы показать фиксированный элемент
+  if (window.scrollY >= content.offsetTop) {
+    fixedDiv.style.display = 'flex';
+  } else {
+    fixedDiv.style.display = 'none';
+  }
+});

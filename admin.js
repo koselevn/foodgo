@@ -10,6 +10,7 @@ function adminLog(event) {
     let message = document.querySelector('.invalid')
     let form = document.querySelector('.form-log')
     let inf = document.querySelector('.order-section')
+    let header = document.querySelector('.header-header')
 
     const formData = {
         operation: 4,
@@ -31,6 +32,7 @@ function adminLog(event) {
         if (data.result === 1) {
             form.innerHTML = ``
             inf.classList.add('active-inf')
+            header.classList.add('display-flex')
             selectOrder()
         } else {
             message.classList.add('active-message')
@@ -141,6 +143,12 @@ function oneOrder(id) {
             ProdOrderList = ProdOrderList + tem
         }
 
+        for (let i = 0; i < productsOrder.length; i++) {
+            let nameProduct = productsOrder[i]
+            let countProduct = productsQ[i]
+            minusCountProd(nameProduct, countProduct)
+        }
+
         let ANDCARD = `
         <div class="cart" key_acept_cart="${orderId}" key_noacept="${orderId}">
             <h2 class="cart-title">Order: ${orderId}</h2>
@@ -161,6 +169,33 @@ function oneOrder(id) {
 
     })
             
+    .catch(error => {
+        console.log('Ошибка:', error);
+    });
+}
+
+// ------------------------minusCountProd---------
+
+function minusCountProd(nameProduct, countProduct) {
+
+    const formData = {
+        operation: 1,
+        nameProduct: nameProduct,
+        countProduct: countProduct,
+    };
+
+    fetch('http://localhost:5000/backend-endpoint12', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Успешно:', data);
+
+    })
     .catch(error => {
         console.log('Ошибка:', error);
     });

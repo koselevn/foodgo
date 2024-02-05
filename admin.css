@@ -349,3 +349,65 @@ a {
 .active-inf{
     opacity: 1;
 }
+
+.header-header{
+    margin-bottom: 30px;
+    padding-left: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    display: none;
+}
+
+.display-flex{
+    display: flex;
+}
+
+.header-header-2 {
+    margin-bottom: 30px;
+    padding-left: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    display: flex;
+}
+
+.header-menu-admin-item{
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 15.015px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background: #F9B640;
+    padding: 15px 30px;
+
+    margin-right: 20px;
+
+    transition: all 0.3s;
+
+    border-radius: 20px;
+    border: 1px solid #00000076;
+
+    cursor: pointer;
+}
+
+.header-menu-admin-item:hover{
+    background-color: #c2851c;
+}
+
+/* addProductCount.html */
+
+.div-item{
+    display: flex;
+    padding: 20px;
+}
+
+.new{
+    margin-right: 10px;
+}
+
+.green{
+    color: #0dff00;
+}

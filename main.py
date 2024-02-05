@@ -126,7 +126,7 @@ def handle_post_request2():
                 print('Conection')
                 try:
                     cursor = conection.cursor()
-                    add_new_user = f"select * from products"
+                    add_new_user = f"select * from products where product_count_for_day > 0"
                     cursor.execute(add_new_user)
                     rows = cursor.fetchall()
                 finally:
@@ -452,7 +452,7 @@ def handle_post_request10():
                 print('Conection')
                 try:
                     cursor = conection.cursor()
-                    select_prod = f"select * from products where product_category = '{category}';"
+                    select_prod = f"select * from products where product_category = '{category}' and product_count_for_day > 0;"
                     cursor.execute(select_prod)
                     fProducts = cursor.fetchall()
                 finally:
@@ -486,7 +486,7 @@ def handle_post_request11():
                 print('Conection')
                 try:
                     cursor = conection.cursor()
-                    select_prod = f"select * from products where product_veg = 1;"
+                    select_prod = f"select * from products where product_veg = 1 and product_count_for_day > 0;"
                     cursor.execute(select_prod)
                     fProducts = cursor.fetchall()
                 finally:
@@ -497,6 +497,157 @@ def handle_post_request11():
 
             return jsonify({"message": "Данные успешно приняты на бэкенде!", "fProducts": fProducts})
 
+    except Exception as e:
+        print("Ошибка обработки запроса:", str(e))
+        return jsonify({"error": "Произошла ошибка обработки запроса"}), 500
+
+
+@app.route('/backend-endpoint12', methods=['POST'])
+def handle_post_request12():
+    try:
+        data = request.get_json()
+        operation = data.get('operation')
+        nameProduct = data.get('nameProduct')
+        countProduct = data.get('countProduct')
+
+        if operation == 1:
+            try:
+                conection = pymysql.connect(
+                    host='localhost',
+                    port=3306,
+                    user='root',
+                    password='',
+                    database='test-foodgo',
+                    cursorclass=pymysql.cursors.DictCursor
+                )
+                print('Conection')
+                try:
+                    cursor = conection.cursor()
+                    update_prod_count = f"update products set product_count_for_day = product_count_for_day - {int(countProduct)} where product_name = '{nameProduct}';"
+                    cursor.execute(update_prod_count)
+                    conection.commit()
+                finally:
+                    print('And1')
+            except Exception as ex:
+                print('No Conection')
+                print(ex)
+
+            return jsonify({"message": "Данные успешно приняты на бэкенде!" })
+
+    except Exception as e:
+        print("Ошибка обработки запроса:", str(e))
+        return jsonify({"error": "Произошла ошибка обработки запроса"}), 500
+
+
+@app.route('/backend-endpoint13', methods=['POST'])
+def handle_post_request13():
+    try:
+        data = request.get_json()
+        operation = data.get('operation')
+        if operation == 1:
+            try:
+                conection = pymysql.connect(
+                    host='localhost',
+                    port=3306,
+                    user='root',
+                    password='',
+                    database='test-foodgo',
+                    cursorclass=pymysql.cursors.DictCursor
+                )
+                print('Conection')
+                try:
+                    cursor = conection.cursor()
+                    select_prod = f"select * from products order by product_price;"
+                    cursor.execute(select_prod)
+                    fProducts = cursor.fetchall()
+                finally:
+                    print('And1')
+            except Exception as ex:
+                print('No Conection')
+                print(ex)
+
+            return jsonify({"message": "Данные успешно приняты на бэкенде!", "fProducts": fProducts})
+        if operation == 2:
+            try:
+                conection = pymysql.connect(
+                    host='localhost',
+                    port=3306,
+                    user='root',
+                    password='',
+                    database='test-foodgo',
+                    cursorclass=pymysql.cursors.DictCursor
+                )
+                print('Conection')
+                try:
+                    cursor = conection.cursor()
+                    select_prod = f"select * from products order by product_price desc;"
+                    cursor.execute(select_prod)
+                    fProducts = cursor.fetchall()
+                finally:
+                    print('And1')
+            except Exception as ex:
+                print('No Conection')
+                print(ex)
+
+            return jsonify({"message": "Данные успешно приняты на бэкенде!", "fProducts": fProducts})
+    except Exception as e:
+        print("Ошибка обработки запроса:", str(e))
+        return jsonify({"error": "Произошла ошибка обработки запроса"}), 500
+
+
+@app.route('/backend-endpoint14', methods=['POST'])
+def handle_post_request14():
+    try:
+        data = request.get_json()
+        operation = data.get('operation')
+        id = data.get('id')
+        value = data.get('value')
+        if operation == 1:
+            try:
+                conection = pymysql.connect(
+                    host='localhost',
+                    port=3306,
+                    user='root',
+                    password='',
+                    database='test-foodgo',
+                    cursorclass=pymysql.cursors.DictCursor
+                )
+                print('Conection')
+                try:
+                    cursor = conection.cursor()
+                    select_prod = f"select * from products;"
+                    cursor.execute(select_prod)
+                    rows = cursor.fetchall()
+                finally:
+                    print('And1')
+            except Exception as ex:
+                print('No Conection')
+                print(ex)
+
+            return jsonify({"message": "Данные успешно приняты на бэкенде!", "rows": rows})
+        if operation == 2:
+            try:
+                conection = pymysql.connect(
+                    host='localhost',
+                    port=3306,
+                    user='root',
+                    password='',
+                    database='test-foodgo',
+                    cursorclass=pymysql.cursors.DictCursor
+                )
+                print('Conection')
+                try:
+                    cursor = conection.cursor()
+                    select_prod = f"update products set product_count_for_day = product_count_for_day + {int(value)} where product_id = {int(id)};"
+                    cursor.execute(select_prod)
+                    conection.commit()
+                finally:
+                    print('And2')
+            except Exception as ex:
+                print('No Conection')
+                print(ex)
+
+            return jsonify({"message": "Данные успешно приняты на бэкенде!"})
     except Exception as e:
         print("Ошибка обработки запроса:", str(e))
         return jsonify({"error": "Произошла ошибка обработки запроса"}), 500

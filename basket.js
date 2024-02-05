@@ -96,16 +96,28 @@ function delCount(id) {
 }
 
 function addCount(id) {
-    let VAR = document.querySelector(`[key_id="${id}"]`)
+    let VAR = document.querySelector(`[key_id="${id}"]`);
 
-    basket.map(el => {
+    let countBtn = document.querySelector('#add')
+
+    basket.forEach(el => {
         if (el.product_id === id) {
-            if (el.count >= 1) {
-                el.count = el.count + 1
-                VAR.innerHTML = `<p class="count-var">${el.count}</p>`
+            products.forEach(elem => {
+                if (elem.product_id === id) {
+                     if (elem.product_count_for_day === 1) {
+                        countBtn.classList.add('count-btn-block')
+                        countBtn.removeAttribute('onclick')
+                    } else if (elem.product_count_for_day < el.count + 1) {
+                        countBtn.classList.add('count-btn-block')
+                        countBtn.removeAttribute('onclick')
+                    } else if (el.count >= 1) {
+                el.count = el.count + 1;
+                VAR.innerHTML = `<p class="count-var">${el.count}</p>`;
             }
+                }
+            });
         }
-    })
+    });
 
-    SUMA()
+    SUMA();
 }
