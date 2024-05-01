@@ -1,0 +1,66 @@
+.find-form-div{
+    display: flex;
+}
+
+.f-p {
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+.f-i{
+    color: #000000;
+    font-family: Roboto;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+    margin-left: 10px;
+    margin-right: 20px;   
+}
+
+.f-btn{
+    color: #000000;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+    margin-left: 10px;
+    margin-right: 20px;   
+}
+
+.f-login{
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.f-dev-res-card{
+    margin-top: 50px;
+    margin-left: 40px;
+    background-color: chocolate;
+    width: 900px;
+}
+
+.f-res-data{
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+    margin-left: 20px;
+    margin-top: 5px;
+}

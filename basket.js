@@ -28,7 +28,7 @@ function addToBasket(id) {
                     <button type="submit" id="del" class="count-btn" onclick="delCount(${el.product_id})">-</button>
                     <p class="count-var" key_id="${el.product_id}">${el.count}</p>
                     <button type="submit" key_id_add="${el.product_id}" id="add" class="count-btn" onclick="addCount(${el.product_id})">+</button>
-                    <p class="basket-el-price">${el.product_price}</p>
+                    <p class="basket-el-price">${el.product_price} zl</p>
                 </div>
                 <button class="basket-delete-btn" onclick="deleteOnBasket(${el.product_id})" type="submit">Delete</button>
             </div>

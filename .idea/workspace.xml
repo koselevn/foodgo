@@ -3,16 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="d701dfae-e7dd-4213-8073-4515ce7ffa0c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/accept.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/basket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/select.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +40,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pythonProject/Triteg kazino" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../openaiGPT/ConsoleAi" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -105,29 +106,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1705497579423">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1710489665719">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1705497579423" />
-    <state width="1515" height="129" key="GridCell.Tab.0.bottom" timestamp="1707118561460">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1710489665719" />
+    <state width="1515" height="211" key="GridCell.Tab.0.bottom" timestamp="1712846077501">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="129" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1707118561460" />
-    <state width="1515" height="129" key="GridCell.Tab.0.center" timestamp="1707118561460">
+    <state width="1515" height="211" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
+    <state width="1515" height="211" key="GridCell.Tab.0.center" timestamp="1712846077501">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="129" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1707118561460" />
-    <state width="1515" height="129" key="GridCell.Tab.0.left" timestamp="1707118561460">
+    <state width="1515" height="211" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
+    <state width="1515" height="211" key="GridCell.Tab.0.left" timestamp="1712846077501">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="129" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1707118561460" />
-    <state width="1515" height="129" key="GridCell.Tab.0.right" timestamp="1707118561460">
+    <state width="1515" height="211" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
+    <state width="1515" height="211" key="GridCell.Tab.0.right" timestamp="1712846077501">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="129" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1707118561460" />
-    <state x="465" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1707117778544">
+    <state width="1515" height="211" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
+    <state x="465" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1712844259228">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="465" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.816@0.0.1536.816" timestamp="1707117778544" />
+    <state x="465" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.816@0.0.1536.816" timestamp="1712844259228" />
   </component>
 </project>

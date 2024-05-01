@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>FoodGo</title>
 </head>
+
 <body>
     <header class="header-header">
         <nav class="header-nav">
             <img class="header-img c" src="img/FoodGo.png" alt="FoodGo">
             <nav class="header-nav-2 b">
                 <a href="index.html" class="header-a">Home</a>
-                <a href="" class="header-a">My Orders</a>
+                <a href="orders.html" class="header-a">My Orders</a>
                 <a href="#menu" class="header-a">Menu</a>
                 <a href="#popup" class="header-a">Basket</a>
             </nav>
@@ -20,10 +22,11 @@
         <div class="title-div">
             <div>
                 <h1 class="title-title c">THIS IS MORE THAN JUST TASTY</h1>
-                <p class="title-p c">Welcome to our fast restaurant! Enjoy the taste in every bite - both taste and speed are important to us. Come
-                and enjoy
-                delicious food without wasting time!</p>  
-                
+                <p class="title-p c">Welcome to our fast restaurant! Enjoy the taste in every bite - both taste and
+                    speed are important to us. Come
+                    and enjoy
+                    delicious food without wasting time!</p>
+
                 <a class="title-btn" href="#menu">Order food</a>
                 <a class="title-btn-2" href="#menu">Order food</a>
             </div>
@@ -49,13 +52,19 @@
                 <div onclick="filter('Potatoes')" class="filter-item a">Potatoes</div>
                 <div onclick="filter('sause')" class="filter-item c">Sauses</div>
 
-                <div onclick="filterVeg()" class="filter-item-veg a">Vegetarian</div>
+                <!-- <div onclick="filterVeg()" class="filter-item-veg a">Vegetarian</div> -->
 
-                <div onclick="filterPricePlus()" class="filter-item-p a">Ascending</div>
-                <div onclick="filterPriceMinus()" class="filter-item-p a">Descending</div>
+                <input class="p-input-price-1 c" type="text" placeholder="0.00 (From)">
+                <input class="p-input-price-2 a" type="text" placeholder="100.50 (To)">
+                <div onclick="BFilter()" class="filter-item-p-p c">Prise</div>
+
+                <input class="p-input-product a" type="text" placeholder="ananas">
+                <div onclick="ProdFilter()" class="filter-item-p-p c">Find</div>
+
+                <!--<div onclick="filterPricePlus()" class="filter-item-p a">Ascending</div> -->
+                <!-- <div onclick="filterPriceMinus()" class="filter-item-p a">Descending</div> -->
             </div>
             <div class="filter-div-2">
-
             </div>
             <div class="cards">
             </div>
@@ -69,6 +78,9 @@
         <p class="message-for-not-time-cor">Opening hours from 7:00 to 23:00</p>
     </main>
     <footer></footer>
+    <div>
+        <div class="pop-products"></div>
+    </div>
     <div id="popup" class="popup">
         <a href="#" class="bagron"></a>
         <div class="popup_body">
@@ -79,12 +91,12 @@
                     <div class="list-el"></div>
                 </div>
                 <div class="basket-and-div">
-                <div class="sum-div">
-                    <p class="summa">Summa: 00.00</p>
-                </div>
-                <div>
-                    <a class="confirm-btn" href="#order">Confirm</a>
-                </div>
+                    <div class="sum-div">
+                        <p class="summa">Summa: 00.00 zl</p>
+                    </div>
+                    <div>
+                        <a class="confirm-btn" href="#order">Confirm</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,7 +119,8 @@
                         <input placeholder="+48 57 77 777 " type="text" class="phone" id="phone"><br>
 
                         <label class="order-lable" for="requests">Requests and instructions for ordering</label><br>
-                        <textarea placeholder="Requests for ordering" class="requests" name="requests" id="requests"></textarea>
+                        <textarea placeholder="Requests for ordering" class="requests" name="requests"
+                            id="requests"></textarea>
 
                         <label for="datetime" class="datetime">Select date and time</label><br>
                         <input type="datetime-local" id="datetime" name="datetime" class="datetime-input"><br>
@@ -133,5 +146,8 @@
     <script src="order.js"></script>
     <script src="animation.js"></script>
     <script src="filters.js"></script>
+    <script src="filterTwo.js"></script>
+    <script src="popapProduct.js"></script>
 </body>
+
 </html>

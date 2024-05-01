@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin.css">
     <title>Admin GoFood</title>
 </head>
+
 <body class="body-body">
     <header class="header-header">
-        <a href="addProductCount.html" target="_blank"><div class="header-menu-admin-item">Add product count</div></a>
+        <a href="addProductCount.html" target="_blank">
+            <div class="header-menu-admin-item">Add product count</div>
+        </a>
+        <a href="editPeoducts.html" target="_blank">
+            <div class="header-menu-admin-item">Product management</div>
+        </a>
+        <a href="findOrder.html" target="_blank">
+            <div class="header-menu-admin-item">Find Order</div>
+        </a>
+        <a href="statistic.html" target="_blank">
+            <div class="header-menu-admin-item">Statistic</div>
+        </a>
+        <button class="header-menu-admin-item" onclick="refreshPage()">Refresh</button>
     </header>
-        <form class="form-log" action="" method="post">
-            <a class="to-index" href="index.html"><img src="img/FoodGo.png" alt="logo"></a><br>
-            <label class="login-lable" for="login">Login:</label><br>
-            <input type="text" class="login"><br>
-        
-            <label class="login-lable" for="">Password:</label><br>
-            <input type="password" class="password"><br><br>
-        
-            <button class="submit-btn-log" type="submit" onclick="adminLog(event)">Log in</button>
-            <div class="invalid">Invalid password or login</div>
-        </form>
+    <form class="form-log" action="" method="post">
+        <a class="to-index" href="index.html"><img src="img/FoodGo.png" alt="logo"></a><br>
+        <label class="login-lable" for="login">Login:</label><br>
+        <input type="text" class="login"><br>
+
+        <label class="login-lable" for="">Password:</label><br>
+        <input type="password" class="password"><br><br>
+
+        <button class="submit-btn-log" type="submit" onclick="adminLog(event)">Log in</button>
+        <div class="invalid">Invalid password or login</div>
+    </form>
     <section class="order-section">
         <div class="invalid-2">Invalid couriers id</div>
         <div class="valid-3">The order has been transferred to the Courier</div>
@@ -31,4 +45,5 @@
     <script src="accept.js"></script>
     <script src="noaccept.js"></script>
 </body>
+
 </html>

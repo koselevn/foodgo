@@ -10,7 +10,7 @@ function SUMA() {
         summa = summa + s
     })
 
-    sum.innerHTML = `<p class="summa">Summa: ${summa.toFixed(2)}</p>`
+    sum.innerHTML = `<p class="summa">Summa: ${summa.toFixed(2)} zl</p>`
 }
 
 function PAYMETHOD() {

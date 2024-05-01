@@ -272,6 +272,11 @@ header{
     margin-right: auto;
     padding-top: 20px;
     padding-bottom: 15px;
+
+    width: 480px;
+    height: 480px;
+
+    border-radius: 50px;
 }
 
 .card-name{
@@ -519,6 +524,11 @@ header{
     height: 100%;
 }
 
+.p-input-price-1, .p-input-price-2, .p-input-product {
+    width: 100px;
+    margin-right: 10px;
+}
+
 .popup_close {
     font-family: Roboto;
     position: absolute;
@@ -564,6 +574,8 @@ header{
 .basket-el-img{
     width: 150px;
     height: 150px;
+
+    border-radius: 10px;
 }
 
 .basket-el-name{
@@ -927,6 +939,27 @@ header{
     cursor: pointer;
 }
 
+.filter-item-p-p {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 15.015px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background: #62D0DF;
+    padding: 15px 30px;
+
+    margin-right: 20px;
+
+    transition: all 0.3s;
+
+    border-radius: 20px;
+    border: 1px solid #00000076;
+
+    cursor: pointer;
+}
+
 .filter-item-all {
     color: #FFF;
     font-family: Roboto;
@@ -960,6 +993,154 @@ header{
     background-color: #4ba7b4;
 }
 
+.filter-item-p-p:hover {
+    background-color: #4ba7b4;
+}
+
 .filter-item-all:hover {
     background-color: #ad0003;
+}
+
+
+/* Check */
+
+.check-div{
+    text-align: center;
+
+    margin-top: 100px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.check-h{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.check-btn{
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    background: #F9B640;
+    padding: 15px 227px;
+
+    transition: all 0.3s;
+
+    border-radius: 20px;
+    border: 1px solid #00000076;
+
+    cursor: pointer;
+}
+
+.check-btn:hover{
+    background-color: #c2851c;
+}
+
+/* or (order card) */
+
+.or-div{
+    padding: 20px;
+    display: flex;
+    background-color: #F9B640;
+    border-radius: 10px;
+
+    transition: all 0.3s;
+
+    margin-left: 70px;
+    margin-right: 70px;
+
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.or-div:hover{
+    background-color: #eba326;
+}
+
+.or-f{
+    color: #000;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+}
+
+.or-s{
+    color: #1aff00;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    margin-left: 50px;
+}
+
+.or-n{
+    color: #ffffff;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    margin-left: 50px;
+}
+
+.ri{
+    text-align: right;
+    margin-left: 50px;
+}
+
+.or-img{
+    display: block;
+    margin-left: auto;
+
+    width: 50px;
+    height: 50px;
+}
+
+/*Popup product*/
+
+.pop-name {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    text-align: center;
+}
+
+.pop-des{
+    color: #aaaaaa;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.781%;
+
+    text-align: center;
+}
+
+.pop-price {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 175.781%;
+
+    text-align: center;
+
+    margin-bottom: 10px;
 }

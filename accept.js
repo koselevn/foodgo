@@ -26,7 +26,7 @@ function delOrder(id) {
     const formData = {
         operation: 1,
         id: id,
-        tg_cr: input
+        id_cr: input
     };
 
 
@@ -42,26 +42,26 @@ function delOrder(id) {
         console.log('Успешно:', data);
         console.log(data.couriers)
         data.couriers.map(el => {
-            if (el.courier_tg_id === parseInt(input)) {
-                message2.classList.add('active-message')
-                message2.classList.add('b')
-                setTimeout(() => {
-                    message2.classList.remove('active-message')
-                    message2.classList.add('c')
-                    message2.classList.remove('b')
-                    setTimeout(() => {message2.classList.remove('c')}, 1000)
-                }, 2000);
+            if (el.courier_id === parseInt(input)) {
+                // message2.classList.add('active-message')
+                // message2.classList.add('b')
+                // setTimeout(() => {
+                //     message2.classList.remove('active-message')
+                //     message2.classList.add('c')
+                //     message2.classList.remove('b')
+                //     setTimeout(() => {message2.classList.remove('c')}, 1000)
+                // }, 2000);
                 statuscookingWay(id)
                 cart.remove()
             } else {  
-                message.classList.add('active-message')
-                message.classList.add('b')
-                setTimeout(() => {
-                    message.classList.remove('active-message')
-                    message.classList.add('c')
-                    message.classList.remove('b')
-                    setTimeout(() => {message.classList.remove('c')}, 1000)
-                }, 2000);
+                // message.classList.add('active-message')
+                // message.classList.add('b')
+                // setTimeout(() => {
+                //     message.classList.remove('active-message')
+                //     message.classList.add('c')
+                //     message.classList.remove('b')
+                //     setTimeout(() => {message.classList.remove('c')}, 1000)
+                // }, 2000);
             }
         })
     })

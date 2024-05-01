@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="edit.css">
+    <title>Edit products</title>
+</head>
+
+<body class="body-body">
+    <div class="ed-add-abs-div">
+        <div class="ed-add-div">
+            <p class="ed-add-title">Add product</p>
+
+            <p class="ed-add-p">Name</p>
+            <input class="ed-add-input add-name" type="text">
+
+            <p class="ed-add-p">Description</p>
+            <textarea class="ed-add-input add-des" name="" id="" cols="20" rows="1"></textarea>
+
+            <p class="ed-add-p">Img link</p>
+            <input class="ed-add-input add-img" type="text">
+
+            <p class="ed-add-p">Price</p>
+            <input class="ed-add-input add-price" type="text">
+
+            <p class="ed-add-p">Count</p>
+            <input class="ed-add-input add-count" type="text">
+
+            <p class="ed-add-p">Category</p>
+            <input class="ed-add-input add-category" type="text">
+
+            <p class="ed-add-p">Vegaterian</p>
+            <input class="ed-add-input add-veg" type="text">
+            <br>
+            <button class="ed-add-btn" onclick="AddProductDB()">Add product</button>
+        </div>
+        <div class="ed-add-div">
+            <p class="ed-add-title">Edit Product</p>
+
+            <p class="ed-add-p">Id</p>
+            <input class="ed-add-input add-id-2" type="text">
+
+            <p class="ed-add-p">Name</p>
+            <input class="ed-add-input add-name-2" type="text">
+
+            <p class="ed-add-p">Description</p>
+            <textarea class="ed-add-input add-des-2" name="" id="" cols="20" rows="1"></textarea>
+
+            <p class="ed-add-p">Img link</p>
+            <input class="ed-add-input add-img-2" type="text">
+
+            <p class="ed-add-p">Price</p>
+            <input class="ed-add-input add-price-2" type="text">
+
+            <p class="ed-add-p">Category</p>
+            <input class="ed-add-input add-category-2" type="text">
+
+            <p class="ed-add-p">Vegaterian</p>
+            <input class="ed-add-input add-veg-2" type="text">
+            <br>
+            <button class="ed-add-btn" onclick="updateProductDB()">Edit product</button>
+        </div>
+        <!--In you can add content-->
+    </div>
+    <div class="ed-in-prod"></div>
+    <div class="ed-in-deActive-prod"></div>
+
+    <script src="addproduct.js"></script>
+    <script src="edit.js"></script>
+    <script src="updateProduct.js"></script>
+</body>
+
+</html>

@@ -18,6 +18,9 @@ function adminLog(event) {
         password: password
     };
 
+    form.innerHTML = `<p class="login-lable">Loagin...</p>
+                        <p class="login-lable">Please wait</p>`
+
 
     fetch('http://localhost:5000/backend-endpoint3', {
         method: 'POST',
@@ -32,6 +35,7 @@ function adminLog(event) {
         if (data.result === 1) {
             form.innerHTML = ``
             inf.classList.add('active-inf')
+            inf.classList.add('active-inf-display')
             header.classList.add('display-flex')
             selectOrder()
         } else {
@@ -95,16 +99,12 @@ function selectOrder() {
 }
 
 function oneOrder(id) {
-
-    let orderSection = document.querySelector('.order-section')
+    let orderSection = document.querySelector('.order-section');
 
     const formData = {
         operation: 6,
         id: id
     };
-
-    console.log(formData)
-
 
     fetch('http://localhost:5000/backend-endpoint5', {
         method: 'POST',
@@ -116,59 +116,63 @@ function oneOrder(id) {
     .then(response => response.json())
     .then(data => {
         console.log('Успешно:', data);
-        
-        let orderId = ''
-        let orderComm = ''
-        let orderPhone = ''
-        let productsOrder = []
-        let productsQ = []
-        let orderStatus = ''
-        let orderTime = ''
-        let orderDate = ''
 
-        data.order.map(el => {
-            orderId = el.order_id
-            orderComm = el.order_client_comment
-            productsOrder.push(el.product_name)
-            productsQ.push(el.quantity)
-            orderPhone = el.order_client_phone
-            orderStatus = el.order_status
-            orderTime = el.order_time
-            orderDate = el.order_date
-        })
+        // Получение данных о заказе
+        let orderId = data.order[0].order_id;
+        let orderComm = data.order[0].order_client_comment;
+        let orderPhone = data.order[0].order_client_phone;
+        let orderStatus = data.order[0].order_status;
+        let orderTime = data.order[0].order_time; // Время заказа
+        let orderDate = data.order[0].order_date;
+        let orderAdress = data.order[0].order_client_adress;
+        let productsOrder = [];
+        let productsQ = [];
 
-        let ProdOrderList = ``
+        // Добавление продуктов заказа в массивы
+        data.order.forEach(el => {
+            productsOrder.push(el.product_name);
+            productsQ.push(el.quantity);
+        });
+
+        // Сборка HTML-разметки для заказа
+        let ProdOrderList = '';
         for (let i = 0; i < productsOrder.length; i++) {
-            let tem = `<p class="cart-product">P: ${productsOrder[i]} ${productsQ[i]}pcs</p>`
-            ProdOrderList = ProdOrderList + tem
+            let tem = `<p class="cart-product">P: ${productsOrder[i]} ${productsQ[i]}pcs</p>`;
+            ProdOrderList += tem;
         }
 
-        for (let i = 0; i < productsOrder.length; i++) {
-            let nameProduct = productsOrder[i]
-            let countProduct = productsQ[i]
-            minusCountProd(nameProduct, countProduct)
-        }
-
-        let ANDCARD = `
-        <div class="cart" key_acept_cart="${orderId}" key_noacept="${orderId}">
-            <h2 class="cart-title">Order: ${orderId}</h2>
-            ${ProdOrderList}
-            <p class="cart-datetime">${orderDate} ${orderTime}</p>
-            <p class="cart-comm">Coment: ${orderComm}</p>
-            <div class="btnDiv" key_acept="${orderId}">
-                <button class="cart-accept-btn" onclick="accept(${orderId})">accept</button>
-                <button class="cart-no-accept-btn" onclick="NOaccept(${orderId}, ${orderPhone})">No accept</button>
-            </div>
-        </div>`
-
-        if (orderStatus === 'On the way' || orderStatus === 'Delivered') {
-            console.log('NOOOOOOT STATUS')
+        // Проверка статуса заказа и добавление на страницу
+        if (orderStatus === 'On the way' || orderStatus === 'Delivered' || orderStatus === 'Rejected') {
+            console.log('NOOOOOOT STATUS');
         } else {
-            orderSection.insertAdjacentHTML('beforeend', ANDCARD)
+            // Создание HTML-разметки для заказа
+            let ANDCARD = `
+            <div class="cart" key_acept_cart="${orderId}" key_noacept="${orderId}">
+                <h2 class="cart-title">Order: ${orderId}</h2>
+                ${ProdOrderList}
+                <p class="cart-datetime">${orderDate} ${orderTime}</p>
+                <p class="cart-datetime">adress: ${orderAdress}</p>
+                <p class="cart-comm">Coment: ${orderComm}</p>
+                <div class="btnDiv" key_acept="${orderId}">
+                    <button class="cart-accept-btn" onclick="accept(${orderId})">accept</button>
+                    <button class="cart-no-accept-btn" onclick="NOaccept(${orderId}, ${orderPhone})">No accept</button>
+                </div>
+            </div>`;
+            // Добавление заказа на страницу
+            orderSection.insertAdjacentHTML('beforeend', ANDCARD);
         }
+
+        // Сортировка заказов на странице по времени
+        let allOrders = Array.from(orderSection.querySelectorAll('.cart'));
+        allOrders.sort((a, b) => {
+            let timeA = new Date(a.querySelector('.cart-datetime').textContent);
+            let timeB = new Date(b.querySelector('.cart-datetime').textContent);
+            return timeA - timeB;
+        });
+        orderSection.innerHTML = ''; // Очистка содержимого
+        allOrders.forEach(order => orderSection.appendChild(order)); // Добавление отсортированных заказов обратно на страницу
 
     })
-            
     .catch(error => {
         console.log('Ошибка:', error);
     });
@@ -199,4 +203,10 @@ function minusCountProd(nameProduct, countProduct) {
     .catch(error => {
         console.log('Ошибка:', error);
     });
+}
+
+// ------------------------Refresh Page---------
+
+function refreshPage() {
+    location.reload(); // Этот метод обновляет текущую страницу
 }

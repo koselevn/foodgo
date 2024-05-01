@@ -8,9 +8,9 @@ function farsProduct() {
         const element = `
     <div class="on-card">
         <div class="card">
-            <img class="card-img" src="${el.product_img}" alt="food">
+            <a href="#pop-prod${el.product_id}"><img class="card-img" src="${el.product_img}" alt="food"></a>
             <p class="card-name">${el.product_name}</p>
-            <p class="card-price">${el.product_price}</p>
+            <p class="card-price">${el.product_price} zl</p>
             <button class="card-btn" type="submit" onclick="addToBasket(${el.product_id})">Add to cart</button>
         </div>
     </div>`
@@ -19,5 +19,6 @@ function farsProduct() {
     })
 
     cards.innerHTML = result_data
+    popProd()
 
 }

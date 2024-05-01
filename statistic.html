@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin GoFood</title>
+</head>
+
+<body class="body-body">
+    <header class="s-header">
+        <p class="s-p">from</p>
+        <input type="date" placeholder="2024-03-12" class="s-input-1" type="text">
+        <p class="s-p">to</p>
+        <input type="date" placeholder="2024-03-12" class="s-input-2" type="text">
+        <button onclick="getStatistic()">Generate</button>
+        <button style="margin-left: 5px;" onclick="print()">Print</button>
+    </header>
+
+    <!--Statistic-->
+    <section>
+        <div class="s-div">
+            <h1 class="s-login-s">Please input date </h1>
+        </div>
+    </section>
+    <script src="statistic.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="find.css">
+    <title>Find Product</title>
+</head>
+
+<body class="body-body">
+    <header class="header-header-2">
+    </header>
+    <main class="main-main">
+        <div class="find-form-div">
+            <p class="f-p">Find Type</p>
+            <select id="find-type">
+                <option value="order_id" class="f-i">ID</option>
+                <option value="order_client_adress" class="f-i">Address</option>
+                <option value="order_client_phone" class="f-i">Phone</option>
+                <option value="order_pice" class="f-i">Price</option>
+                <option value="order_date" class="f-i">Data</option>
+            </select>
+            <p class="f-p">Value</p>
+            <input type="text" class="find-val f-i">
+
+            <button onclick="findOrder()" class="f-btn">Find</button>
+            <button onclick="print()" class="f-btn">Print</button>
+        </div>
+        <div class="f-div">
+        </div>
+    </main>
+
+    <script src="findOrder.js"></script>
+</body>
+
+</html>
