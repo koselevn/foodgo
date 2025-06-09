@@ -25,6 +25,7 @@ fetch('http://localhost:5000/backend-endpoint2', {
     console.log('Ошибка:', error);
 });
 
+
 function selectALL() {
 
     const formData = {

@@ -22,7 +22,7 @@ const formData = {
         data.rows.map(el => {
             const element = `
         <div key_del="${el.product_id}" class="or-div">
-            <p class="or-f t">ID: ${el.product_id}</p>
+            <p class="or-f t">(${el.product_id})</p>
             <p class="or-n t">${el.product_name}</p>
             <p class="or-f ri t">Category: ${el.product_category}</p>
             <p class="or-f ri t">Count: ${el.product_count_for_day}</p>

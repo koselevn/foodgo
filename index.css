@@ -61,6 +61,7 @@
 html {
     box-sizing: border-box;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -363,6 +364,30 @@ header{
     right: 20px;
 }
 
+.basket-count-p {
+    font-family: Roboto;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.basket-count {
+    position: fixed;
+    bottom: 95px;
+    right: 90px;
+
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
 .message-for-add-to-card{
     position: fixed;
     bottom: 20px;
@@ -522,11 +547,6 @@ header{
     background-size: cover;
     width: 100%;
     height: 100%;
-}
-
-.p-input-price-1, .p-input-price-2, .p-input-product {
-    width: 100px;
-    margin-right: 10px;
 }
 
 .popup_close {
@@ -856,8 +876,8 @@ header{
 }
 
 .filter-div{
-    margin-bottom: 30px;
-    /* display: flex; */
+    /* margin-bottom: 30px;
+    display: flex;
     padding-left: 80px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -867,6 +887,29 @@ header{
     left: 0;
     display: none;
     flex-direction: row;
+
+     */
+
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 10px;
+    top: 0;
+    left: 0;
+    
+    background-color: #3d3d3d76;
+    border-radius: 20px;
+    border-radius: 0 0 40px 40px;
+
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .filter-div-2 {
@@ -885,14 +928,12 @@ header{
     line-height: 175.781%;
 
     background: #F9B640;
-    padding: 15px 30px;
-
-    margin-right: 20px;
+    border: 1px solid transparent;
+    padding: 7px 30px;
 
     transition: all 0.3s;
 
     border-radius: 20px;
-    border: 1px solid #00000076;
 
     cursor: pointer;
 }
@@ -906,16 +947,25 @@ header{
     line-height: 175.781%;
 
     background: #2dd43e;
-    padding: 15px 30px;
+    border: 1px solid transparent;
+    padding: 7px 30px;
 
-    margin-right: 20px;
 
     transition: all 0.5s;
 
     border-radius: 20px;
-    border: 1px solid #00000076;
 
     cursor: pointer;
+}
+
+.p-input-price-1,
+.p-input-price-2,
+.p-input-product {
+    width: 100px;
+
+    border: 1px solid transparent;
+    padding: 8px;
+    border-radius: 20px;
 }
 
 .filter-item-p {
@@ -927,14 +977,13 @@ header{
     line-height: 175.781%;
 
     background: #62D0DF;
-    padding: 15px 30px;
+    border: 1px solid transparent;
+    padding: 7px 30px;
 
-    margin-right: 20px;
 
     transition: all 0.3s;
 
     border-radius: 20px;
-    border: 1px solid #00000076;
 
     cursor: pointer;
 }
@@ -948,14 +997,13 @@ header{
     line-height: 175.781%;
 
     background: #62D0DF;
-    padding: 15px 30px;
+    border: 1px solid transparent;
+    padding: 7px 30px;
 
-    margin-right: 20px;
 
     transition: all 0.3s;
 
     border-radius: 20px;
-    border: 1px solid #00000076;
 
     cursor: pointer;
 }
@@ -969,14 +1017,12 @@ header{
     line-height: 175.781%;
 
     background: #FF0004;
-    padding: 15px 30px;
-
-    margin-right: 20px;
+    border: 1px solid transparent;
+    padding: 7px 30px;
 
     transition: all 0.3s;
 
     border-radius: 20px;
-    border: 1px solid #00000076;
 
     cursor: pointer;
 }

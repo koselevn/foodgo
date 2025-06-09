@@ -2,10 +2,13 @@
 
 let basket = []
 
+
+
 function addToBasket(id) {
     let basket_text = document.querySelector('.list-el')
     const message = document.querySelector('.message-for-add-to-card')
     let basketIcone = document.querySelector('.basket')
+    let basketCount = document.querySelector('.basket-count')
 
     products.map(el => {
         if (basket.find(item => item.product_id === id)) {
@@ -41,6 +44,7 @@ function addToBasket(id) {
     SUMA()
 
     basketIcone.classList.add('live')
+    basketCount.classList.add('live')
     message.classList.add('active-message')
     message.classList.add('b')
     setTimeout(() => {
@@ -49,6 +53,8 @@ function addToBasket(id) {
         message.classList.remove('b')
         setTimeout(() => {message.classList.remove('c')}, 1000)
     }, 2000);
+
+    basketCount.innerHTML = `<p class="basket-count-p">${basket.length}</p>`
 }
 
 // ---------------------------------deleteOnBasket-----
@@ -60,6 +66,7 @@ function deleteOnBasket(id) {
     let productIndex = basket.findIndex(item => item.product_id === id);
 
     let basketIcone = document.querySelector('.basket')
+    let basketCount = document.querySelector('.basket-count')
 
     if (productIndex !== -1) {
         basket.splice(productIndex, 1);
@@ -73,7 +80,10 @@ function deleteOnBasket(id) {
 
     if (basket.length === 0) {
         basketIcone.classList.remove('live')
+        basketCount.classList.remove('live')
     }
+
+    basketCount.innerHTML = `<p class="basket-count-p">${basket.length}</p>`
 }
 
 // -------------------------------------delCount and addCount

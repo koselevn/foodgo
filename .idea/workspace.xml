@@ -7,14 +7,16 @@
       <change beforePath="$PROJECT_DIR$/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminmenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminmenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/basket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editPeoducts.html" beforeDir="false" afterPath="$PROJECT_DIR$/editPeoducts.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/select.js" beforeDir="false" afterPath="$PROJECT_DIR$/select.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +42,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../openaiGPT/ConsoleAi" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/заказы/Авто с пробегом/CarsSale" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.bot">
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="foodgo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.bot" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -106,29 +108,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1710489665719">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1748876384730">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1710489665719" />
-    <state width="1515" height="211" key="GridCell.Tab.0.bottom" timestamp="1712846077501">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1748876384730" />
+    <state width="1515" height="177" key="GridCell.Tab.0.bottom" timestamp="1749499484828">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="211" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
-    <state width="1515" height="211" key="GridCell.Tab.0.center" timestamp="1712846077501">
+    <state width="1515" height="177" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1749499484828" />
+    <state width="1515" height="177" key="GridCell.Tab.0.center" timestamp="1749499484828">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="211" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
-    <state width="1515" height="211" key="GridCell.Tab.0.left" timestamp="1712846077501">
+    <state width="1515" height="177" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1749499484828" />
+    <state width="1515" height="177" key="GridCell.Tab.0.left" timestamp="1749499484828">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="211" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
-    <state width="1515" height="211" key="GridCell.Tab.0.right" timestamp="1712846077501">
+    <state width="1515" height="177" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1749499484828" />
+    <state width="1515" height="177" key="GridCell.Tab.0.right" timestamp="1749499484828">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1515" height="211" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1712846077501" />
-    <state x="465" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1712844259228">
+    <state width="1515" height="177" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1749499484828" />
+    <state x="465" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1749497824476">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="465" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.816@0.0.1536.816" timestamp="1712844259228" />
+    <state x="465" y="232" key="com.intellij.ide.util.TipDialog/0.0.1536.816@0.0.1536.816" timestamp="1749497824476" />
   </component>
 </project>

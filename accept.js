@@ -8,27 +8,44 @@ function accept(id) {
 }
 
 function drivery(id) {
-    let cart = document.querySelector('.cart')
-    let btnDiv = document.querySelector(`[key_acept="${id}"]`)
+    let btnDiv = document.querySelector(`[key_acept="${id}"]`);
 
-    btnDiv.innerHTML = `    
-    <input type="text" key_input="${id}" class="input-driv">
-    <button onclick="delOrder(${id})" class="sent">Sent</button>`
+    fetch('http://localhost:5000/get-couriers')
+        .then(response => response.json())
+        .then(data => {
+            const couriers = data.couriers;
+
+            let selectHTML = `<select class="input-driv" key_select="${id}">`;
+            couriers.forEach(courier => {
+                selectHTML += `<option value="${courier.courier_id}">${courier.courer_name} (ID: ${courier.courier_id})</option>`;
+            });
+            selectHTML += `</select>`;
+
+            btnDiv.innerHTML = `
+                ${selectHTML}
+                <button onclick="delOrder(${id})" class="sent">Send</button>
+            `;
+        })
+        .catch(error => {
+            console.log("Ошибка при получении курьеров:", error);
+        });
 }
 
 function delOrder(id) {
     let cart = document.querySelector(`[key_acept_cart="${id}"]`)
-    let input = document.querySelector(`[key_input="${id}"]`).value
+    let select = document.querySelector(`[key_select="${id}"]`)
+    let input = select ? select.value : null;
 
-    let message = document.querySelector('.invalid-2')
-    let message2 = document.querySelector('.valid-3')
+    if (!input) {
+        alert("Оберіть кур'єра");
+        return;
+    }
 
     const formData = {
         operation: 1,
         id: id,
         id_cr: input
     };
-
 
     fetch('http://localhost:5000/backend-endpoint9', {
         method: 'POST',
@@ -40,30 +57,8 @@ function delOrder(id) {
     .then(response => response.json())
     .then(data => {
         console.log('Успешно:', data);
-        console.log(data.couriers)
-        data.couriers.map(el => {
-            if (el.courier_id === parseInt(input)) {
-                // message2.classList.add('active-message')
-                // message2.classList.add('b')
-                // setTimeout(() => {
-                //     message2.classList.remove('active-message')
-                //     message2.classList.add('c')
-                //     message2.classList.remove('b')
-                //     setTimeout(() => {message2.classList.remove('c')}, 1000)
-                // }, 2000);
-                statuscookingWay(id)
-                cart.remove()
-            } else {  
-                // message.classList.add('active-message')
-                // message.classList.add('b')
-                // setTimeout(() => {
-                //     message.classList.remove('active-message')
-                //     message.classList.add('c')
-                //     message.classList.remove('b')
-                //     setTimeout(() => {message.classList.remove('c')}, 1000)
-                // }, 2000);
-            }
-        })
+        statuscookingWay(id)
+        cart.remove();
     })
     .catch(error => {
         console.log('Ошибка:', error);

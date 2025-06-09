@@ -1,3 +1,31 @@
+// ------------------------minusCountProd---------
+
+function minusCountProd(nameProduct, countProduct) {
+
+    const formData = {
+        operation: 1,
+        nameProduct: nameProduct,
+        countProduct: countProduct,
+    };
+
+    fetch('http://localhost:5000/backend-endpoint12', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Успешно:', data);
+
+    })
+    .catch(error => {
+        console.log('Ошибка:', error);
+    });
+}
+
+
 function submitOrder(event) {
 
     event.preventDefault();
@@ -100,7 +128,7 @@ function submitOrder2() {
     const phone = document.getElementById('phone').value;
     const requests = document.getElementById('requests').value;
     const datetime = document.getElementById('datetime').value;
-    const payment = PAYMETHOD()
+    const payment = PAYMETHOD();
 
     const formData = {
         operation: 3,
@@ -113,7 +141,6 @@ function submitOrder2() {
         datetime: datetime
     };
 
-
     fetch('http://localhost:5000/backend-endpoint', {
         method: 'POST',
         headers: {
@@ -124,7 +151,17 @@ function submitOrder2() {
     .then(response => response.json())
     .then(data => {
         console.log('Успешно:', data);
-        window.location.href = "file:///D:/foodgo/thankpage.html";
+
+        // 🔻 Уменьшить количество продуктов после успешного оформления
+        basket.forEach(item => {
+            console.log('Отправляется продукт:', item);
+            minusCountProd(item.product_name, item.count);
+        });
+
+        // 🔻 Перенаправление на страницу "Спасибо"
+        setTimeout(() => {
+            window.location.href = "/thankpage.html";
+        }, 500); // немного задержим, чтобы успели обновиться остатки
     })
     .catch(error => {
         console.log('Ошибка:', error);

@@ -181,7 +181,7 @@ def handle_post_request3():
                 print('No Conection')
                 print(ex)
 
-            return jsonify({"message": "Данные успешно приняты на бэкенде!", "result": result_log[0]})
+            return jsonify({"message": "!!!Данные успешно приняты на бэкенде!", "result": result_log[0]})
 
     except Exception as e:
         print("Ошибка обработки запроса:", str(e))
@@ -426,6 +426,25 @@ def handle_post_request9():
         return jsonify({"error": "Произошла ошибка обработки запроса"}), 500
 
 
+@app.route('/get-couriers', methods=['GET'])
+def get_couriers():
+    try:
+        conection = pymysql.connect(
+            host='localhost',
+            port=3306,
+            user='root',
+            password='',
+            database='test-foodgo',
+            cursorclass=pymysql.cursors.DictCursor
+        )
+        cursor = conection.cursor()
+        cursor.execute("SELECT courier_id, courer_name FROM couriers")
+        couriers = cursor.fetchall()
+        return jsonify({"couriers": couriers})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route('/backend-endpoint10', methods=['POST'])
 def handle_post_request10():
     try:
@@ -516,14 +535,19 @@ def handle_post_request12():
                 print('Conection')
                 try:
                     cursor = conection.cursor()
-                    update_prod_count = f"update products set product_count_for_day = product_count_for_day - {int(countProduct)} where product_name = '{nameProduct}';"
-                    cursor.execute(update_prod_count)
+                    cursor.execute(
+                        "UPDATE products SET product_count_for_day = product_count_for_day - %s WHERE product_name = %s",
+                        (int(countProduct), nameProduct)
+                    )
                     conection.commit()
                 finally:
                     print('And1')
+                    print('Пытаемся уменьшить:', nameProduct, 'на', countProduct)
+                    conection.close()
             except Exception as ex:
                 print('No Conection')
                 print(ex)
+                return jsonify({"error": "Ошибка подключения к базе данных"}), 500
 
             return jsonify({"message": "Данные успешно приняты на бэкенде!"})
 

@@ -25,10 +25,14 @@ function mainAdminCount() {
             data.rows.map(el => {
                 const element = `
         <div class="div-item">
-            <p class="cart-title new" key_id_add="${el.product_id}">${el.product_count_for_day}</p>
-            <p class="cart-product new">${el.product_name}</p>
-            <input key_id_add_input="${el.product_id}" type="text" class="input-driv">
-            <button onclick="addProductCount(${el.product_id})" class="sent">Add</button>
+            <div class="div-item-count-place-1">
+                <p class="cart-coutnt-prod new" key_id_add="${el.product_id}">${el.product_count_for_day}</p>
+                <p class="cart-product new">${el.product_name}</p>
+            </div>
+            <div class="div-item-count-place-2">
+                <input key_id_add_input="${el.product_id}" type="text" class="input-driv">
+                <button onclick="addProductCount(${el.product_id})" class="sent">Add</button>
+            </div>
         </div>`
             
                 result_data = result_data + element
@@ -65,7 +69,7 @@ function addProductCount(id) {
     .then(data => {
         console.log('Успешно:', data);
         if (countNowEl) {
-            countNowEl.innerHTML = `<p class="cart-title new green">${parseInt(countNow) + parseInt(input)}</p>`;
+            countNowEl.innerHTML = `<p class="cart-coutnt-prod new green">${parseInt(countNow) + parseInt(input)}</p>`;
         } else {
             console.error('Элемент не найден');
 }

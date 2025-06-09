@@ -8,6 +8,7 @@ function adminLog(event) {
     let login = document.querySelector('.login').value;
     let password = document.querySelector('.password').value;
     let message = document.querySelector('.invalid')
+    let messageOk = document.querySelector('.ok_log_in');
     let form = document.querySelector('.form-log')
     let inf = document.querySelector('.order-section')
     let header = document.querySelector('.header-header')
@@ -17,9 +18,6 @@ function adminLog(event) {
         login: login,
         password: password
     };
-
-    form.innerHTML = `<p class="login-lable">Loagin...</p>
-                        <p class="login-lable">Please wait</p>`
 
 
     fetch('http://localhost:5000/backend-endpoint3', {
@@ -33,12 +31,23 @@ function adminLog(event) {
     .then(data => {
         console.log('Успешно:', data);
         if (data.result === 1) {
+            setTimeout(() => {
+                messageOk.classList.remove('active-message')
+                messageOk.classList.add('c')
+                messageOk.classList.remove('b')
+                setTimeout(() => {messageOk.classList.remove('c')}, 1000)
+            }, 2000);
+
+            // form.innerHTML = `<p class="login-lable">Loagin...</p>
+            //             <p class="login-lable">Please wait</p>`
+
             form.innerHTML = ``
             inf.classList.add('active-inf')
             inf.classList.add('active-inf-display')
             header.classList.add('display-flex')
             selectOrder()
         } else {
+            console.log('Error password or login')
             message.classList.add('active-message')
             message.classList.add('b')
             setTimeout(() => {
@@ -137,7 +146,7 @@ function oneOrder(id) {
         // Сборка HTML-разметки для заказа
         let ProdOrderList = '';
         for (let i = 0; i < productsOrder.length; i++) {
-            let tem = `<p class="cart-product">P: ${productsOrder[i]} ${productsQ[i]}pcs</p>`;
+            let tem = `<p class="cart-product">${productsQ[i]} : ${productsOrder[i]} </p>`;
             ProdOrderList += tem;
         }
 
@@ -148,14 +157,16 @@ function oneOrder(id) {
             // Создание HTML-разметки для заказа
             let ANDCARD = `
             <div class="cart" key_acept_cart="${orderId}" key_noacept="${orderId}">
-                <h2 class="cart-title">Order: ${orderId}</h2>
-                ${ProdOrderList}
-                <p class="cart-datetime">${orderDate} ${orderTime}</p>
-                <p class="cart-datetime">adress: ${orderAdress}</p>
-                <p class="cart-comm">Coment: ${orderComm}</p>
+                <div class="cart-header"><h2 class="cart-title">Order number: ${orderId}</h2></div>
+                <div class="cart-list-prod">${ProdOrderList}</div>
+                <div class="cart-info-div">
+                    <p class="cart-datetime">${orderDate} ${orderTime}</p>
+                    <p class="cart-datetime">adress: ${orderAdress}</p>
+                    <p class="cart-comm">Comment: ${orderComm}</p>
+                </div>
                 <div class="btnDiv" key_acept="${orderId}">
-                    <button class="cart-accept-btn" onclick="accept(${orderId})">accept</button>
-                    <button class="cart-no-accept-btn" onclick="NOaccept(${orderId}, ${orderPhone})">No accept</button>
+                    <button class="cart-accept-btn" onclick="accept(${orderId})">Accept</button>
+                    <button class="cart-no-accept-btn" onclick="NOaccept(${orderId}, ${orderPhone})">Reject</button>
                 </div>
             </div>`;
             // Добавление заказа на страницу
@@ -178,32 +189,6 @@ function oneOrder(id) {
     });
 }
 
-// ------------------------minusCountProd---------
-
-function minusCountProd(nameProduct, countProduct) {
-
-    const formData = {
-        operation: 1,
-        nameProduct: nameProduct,
-        countProduct: countProduct,
-    };
-
-    fetch('http://localhost:5000/backend-endpoint12', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Успешно:', data);
-
-    })
-    .catch(error => {
-        console.log('Ошибка:', error);
-    });
-}
 
 // ------------------------Refresh Page---------
 
